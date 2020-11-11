@@ -1,0 +1,9 @@
+<div class="container">
+<h1>All our restaurants</h1>
+<ol class="list-group">
+    <% @restaurants.each do |restaurant| %>
+    <li class="list-group-item"> <strong><%=restaurant.name %></strong>| <%= link_to "Details", restaurant_path(restaurant) %> <%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: {confirm: "Are you sure ?" }  %></li>
+    <% end %>
+</ol>
+<%= link_to "Create a restaurant", new_restaurant_path  %>
+</div>
